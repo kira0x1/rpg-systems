@@ -1,0 +1,10 @@
+{
+  "name": "rpg-systems",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "kira0x1 <kira.eva@protonmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  }
+}
