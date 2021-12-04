@@ -1,23 +1,25 @@
-import { StatMod } from "./StatMod";
+import { StatMod, StatType } from "./StatMod";
 
 export abstract class Stat {
-  name: string;
+  name: StatType;
   baseValue: number;
   currentValue: number;
   mods: StatMod[] = [];
 
-  constructor(name: string, baseValue: number = 10) {
-    this.name = name;
+  constructor(statType: StatType, baseValue: number = 10) {
     this.baseValue = baseValue;
     this.currentValue = baseValue;
+    this.name = statType;
   }
 
   public CalculateValue(): number {
     let val = this.baseValue;
 
-    for (const mod of this.mods) {
-      val += mod.flatAmount;
-    }
+    this.mods.filter((m) => m.type === "Flat").map((m) => (val += m.amount));
+
+    this.mods
+      .filter((m) => m.type === "Percentage")
+      .map((m) => (val *= m.amount));
 
     this.currentValue = val;
     return this.currentValue;
