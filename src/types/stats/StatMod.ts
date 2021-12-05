@@ -1,5 +1,3 @@
-import { Stat } from "./Stat";
-
 export type modType = "Flat" | "Percentage";
 export type StatType = "Stamina" | "Intillect";
 

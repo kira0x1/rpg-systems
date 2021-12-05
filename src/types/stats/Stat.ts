@@ -1,4 +1,4 @@
-import { StatMod, StatType } from "./StatMod";
+import { StatMod, StatType } from "./";
 
 export abstract class Stat {
   name: StatType;
