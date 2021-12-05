@@ -6,5 +6,6 @@
   "license": "MIT",
   "scripts": {
     "start": "node ."
-  }
+  },
+  "repository": "https://github.com/kira0x1/rpg-systems.git"
 }
